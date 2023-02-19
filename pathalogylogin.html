@@ -4,28 +4,29 @@
         <title>Diagno Care</title>
         <link rel="stylesheet" href="css/pathlogin.css">
             <center>
-            <h1><ul><i>Pathalogy Login</i></ul></h1>
-           </center>
-        
-    <style> 
 
-</style>
+                <div class="pathlogin"><p>Pathology Login</p></div>
+           </center>
+
+
+
 
     </head>
 <body>
     <center>
-
+        <div class="form">
     <form action="pathalogylogin.php" method="POST">
 
-    <b>E-mail ID :-</b><input type="text" name="patho_emailid" required="required" placeholder="Enter email" pattern="[^ @]*@[^ @]*"><br><br>
+    <span >E-mail ID </span><input type="text" name="patho_emailid" required="required" placeholder="Enter email" pattern="[^ @]*@[^ @]*" title="Please enter valid email"><br><br>
 
-    <b>Password:-</b><input type="password" name="patho_password" required="required"  placeholder="Password"><br><br>
+    <span>Password </span><input type="password" name="patho_password" required="required"  placeholder="Password"><br><br>
 
     <input type="submit" name="sub" value="Login">
 
-   
-    </form>
+
          <button onclick="document.location='pathalogyregistration.php'" class="button">Register</button>
 </center>
+    </form>
+    </div>
     </body>
 </html>
