@@ -26,7 +26,6 @@ border-color: black;
   display: inline-block;
   font-size: 16px;
     }
-
         body  {
   background-image: url("aal3.jpg");
   background-color: #cccccc;
@@ -37,9 +36,9 @@ border-color: black;
         width:auto-inherit;
         height:40%;
 }
-</style>
-</head>
 
+</head>
+</style>
     
 
 <body>
@@ -57,7 +56,7 @@ border-color: black;
       <th>Test Cost</th>
             <th>Payment Status</th>
             <th>Cancel/Edit</th>
-        </table>
+            </tr>	
     
 			<tbody>
 				<?php

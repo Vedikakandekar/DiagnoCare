@@ -73,7 +73,7 @@ if(isset($_POST['submit']))
 $patho_name=$_POST['patho_name'];
 $patho_emailid=$_POST['patho_emailid'];
 $patho_password=$_POST['patho_password'];
-$phnpatho_phnoo=$_POST['patho_phno'];
+$patho_phno=$_POST['patho_phno'];
 $patho_addr=$_POST['patho_addr'];
     
     
