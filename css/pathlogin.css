@@ -1,0 +1,42 @@
+input[type=text] {
+    width: 25%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: 1px solid black;
+    font-family: cursive;
+    font-size: 100%;
+    font-size-adjust: auto;
+}
+input[type=submit] {
+    width: 10%;
+    padding: 12px 20px;
+    border: 1px solid #555;
+    background-color: black;
+    color:white;
+
+}
+.button {
+    width: 10%;
+    padding: 12px 20px;
+    border: 1px solid #555;
+    background-color: black;
+    color:white;
+    align-content: center;
+}
+input[type=password] {
+    width: 25%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: 1px solid black;
+}
+body  {
+    background-image: url("employeelogin.jpg");
+    background-color: #cccccc;
+    background-position:center;
+    background-size:cover;
+    text-decoration-style: wavy;
+    background-repeat: no-repeat;
+    width:auto-inherit;
+    height:40%;
+}
+
