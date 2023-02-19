@@ -1,4 +1,6 @@
-
+<?php
+					include('db.php');
+                    ?>
 <html>
 <head>
     
@@ -47,6 +49,7 @@ border-color: black;
 	
 	<div>
 		<table border="1">
+            <tr>
         <th>Appointment ID</th>
       <th>Appointment Date</th>
       <th>Appointment Time</th>
@@ -60,13 +63,12 @@ border-color: black;
     
 			<tbody>
 				<?php
-					include('db.php');
                     session_start();
                     
                     $emailid= $_SESSION["emailid"];
 
-                        echo $emailid;
-                 $result=mysqli_query($con,"select * from user_appointment where emailid='$emailid' "); //added when error occured
+                    echo $emailid;
+                    $result=mysqli_query($con,"select * from user_appointment where emailid='$emailid' "); //added when error occured
               
 					
                         
@@ -77,7 +79,7 @@ border-color: black;
                         <?php foreach($result as $row){
     
     ?>
-    <tr >
+    </tr >
     <td>
   
 

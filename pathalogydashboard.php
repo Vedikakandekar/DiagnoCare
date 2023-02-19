@@ -66,7 +66,7 @@ li a:hover:not(.active) {
         <li><a href="pathalogyprofile.php">My Profile</a></li>
         <li><a href="testregistration.php">Register Tests</a></li>
         <li><a href="availabletest.php">Available Tests</a></li>
-          <li><a href="#">Appointments</a></li>
+          <li><a href="pathAppointments.php">Appointments</a></li>
         <li><a href="#">Test Result Updation</a></li>
   
     <li><a href="index.html" >Log Out</a></li>

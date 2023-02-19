@@ -8,6 +8,6 @@
    echo $patho_id;
 
  
-	mysqli_query($con,"delete from test_details where test_id='$test_id'");
+	$res = mysqli_query($con ,"delete from test_details where test_id='$test_id'");
 	header('location: availabletest.php');
 ?>
