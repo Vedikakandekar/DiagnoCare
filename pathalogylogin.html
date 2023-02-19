@@ -1,68 +1,27 @@
 <html>
+
     <head>
-        <center>
+        <title>Diagno Care</title>
+        <link rel="stylesheet" href="css/pathlogin.css">
+            <center>
             <h1><ul><i>Pathalogy Login</i></ul></h1>
            </center>
         
     <style> 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-    font-family: cursive;
-    font-size: 100%;
-    font-size-adjust: auto;
-}
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           .button {
- width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-               align-content: center;
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("employeelogin.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-        width:auto-inherit;
-        height:40%;
-}
- 
-  
+
 </style>
-    
-    
- 
+
     </head>
 <body>
     <center>
 
-<form action="pathalogylogin.php" method="POST">
+    <form action="pathalogylogin.php" method="POST">
 
-    <b>E-mail ID :-</b><input type="text" name="patho_emailid" required=""><br><br>
+    <b>E-mail ID :-</b><input type="text" name="patho_emailid" required="required" placeholder="Enter email" pattern="[^ @]*@[^ @]*"><br><br>
 
-<b>Password:-</b><input type="password" name="patho_password" required=""><br><br>
+    <b>Password:-</b><input type="password" name="patho_password" required="required"  placeholder="Password"><br><br>
 
-<input type="submit" name="sub" value="Login">
+    <input type="submit" name="sub" value="Login">
 
    
     </form>
