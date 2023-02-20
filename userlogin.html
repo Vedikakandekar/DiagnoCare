@@ -1,76 +1,29 @@
 <html>
-    <head>
-        <center>
-            <h1><ul><i>User Login</i></ul></h1>
-           </center>
-        
-    <style> 
 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-    font-family: cursive;
-    font-size: 100%;
-    font-size-adjust: auto;
-}
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           .button {
- width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-               align-content: center;
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("employeelogin.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-
-        width:auto-inherit;
-        height:40%;
-}
-
-
-
-  
-</style>
-    
-    
- 
-    </head>
-<body>
+<head>
+    <title>Diagno Care</title>
+    <link rel="stylesheet" href="css/userlogin.css">
     <center>
 
-<form action="userlogin.php" method="POST">
+        <div class="pathlogin"><p>User Login</p></div>
+    </center>
 
-    <b>E-mail ID:-</b><input type="text" name="emailid" required=""><br><br>
+</head>
+<body>
+<center>
+    <div class="form">
+        <form action="userlogin.php" method="POST">
 
-<b>Password:-</b><input type="password" name="password" required=""><br><br>
+            <span >E-mail ID </span><input type="text" name="patho_emailid" required="required" placeholder="Enter email" pattern="[^ @]*@[^ @]*" title="Please enter valid email"><br><br>
 
-<input type="submit" name="sub" value="Login">
+            <span>Password </span><input type="password" name="patho_password" required="required"  placeholder="Password"><br><br>
 
-   
-    </form>
-         <button onclick="document.location='userregistration.php'" class="button">Register</button>
+            <input type="submit" name="sub" value="Login">
+
+
+            <button onclick="document.location='userregistration.php'" class="button">Register</button>
 </center>
-    </body>
+</form>
+</div>
+</body>
 </html>
