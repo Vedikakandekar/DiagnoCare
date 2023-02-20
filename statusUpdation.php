@@ -1,5 +1,7 @@
-<?php 
+<?php
 session_start();
+include("db.php");
+
 if (!isset($_SESSION['emailid'])) {
   $_SESSION['msg'] = "You must log in first";
   header('location: index.html');
@@ -13,6 +15,7 @@ if (isset($_GET['logout'])) {
 ?>
 <html>
 <head>
+    <link rel="stylesheet" href="css/pathlogin.css">
 <style>
 body {
   margin: 0;
@@ -28,7 +31,7 @@ ul {
   height: 100%;
   overflow: auto;
     color: white;
-   
+
 }
 
 li a {
@@ -62,19 +65,26 @@ li a:hover:not(.active) {
 <body>
 
 <ul>
-  
+
         <li><a href="pathalogyprofile.php">My Profile</a></li>
         <li><a href="testregistration.php">Register Tests</a></li>
         <li><a href="availabletest.php">Available Tests</a></li>
           <li><a href="pathAppointments.php">Appointments</a></li>
         <li><a href="statusUpdation.php">Update Test Status </a></li>
-  
+
     <li><a href="index.html" >Log Out</a></li>
 
 </ul>
 
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
-  
+<div style="margin-left:50%;padding:1px 16px;height:1000px;">
+
+    <div class="button-container">
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
+    </div>
+
+
 </div>
 
 </body>

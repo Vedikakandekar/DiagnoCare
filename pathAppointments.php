@@ -40,6 +40,20 @@ if (isset($_GET['logout'])) {
         </h1>
     </p>
 
+    <table>
+        <tr>
+        <th>Column One </th>
+        <th>Column Two </th>
+        </tr>
+
+        <tr>
+            <td>hello 1 </td>
+            <td>hello 2 </td>
+        </tr>
+
+    </table>
+
+
     </div>
 
 
