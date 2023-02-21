@@ -1,68 +1,17 @@
+<!DOCTYPE html>
 <html>
-    <head>
-   <center>
-            <h1><i>User Registration</i></h1> 
-           </center>
-        
-    <style> 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color:black;
- color:white;
-    
-}
-     .button {
-width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-        
-           input[type=email] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("aal3.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-        width:auto-inherit;
-        height:40%;
-}
- 
-  
-</style>
-    
-    
- 
-    </head>
- 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/userregistration.css">
+</head>
 
-
-        
 <body>
-    <center>
+
 
 <?php                              //user registration used for fetching data at user profile
 include "db.php"; 
@@ -93,31 +42,49 @@ $emailid=$_POST['emailid'];
 mysqli_close($con); // Close connection
 ?>
 
+<div class="registration-form">
 
-<form method="POST">
-   
-   
-<b>Enter First Name : </b><input type="text" name="firstname" >
-  <br/>
-         <b>Enter Middle Name: </b><input type="text" name="middlename" >
-  <br/>
-        <b> Enter Last Name : </b><input type="text" name="lastname" >
-  <br/>
-      <b>Enter Gender : </b><input type="text" name="gender" >
-  <br/>
-  
-        <b>Enter Email-Id : </b><input type="email" name="emailid" >
-  <br/>
-         <b>Enter Password: </b><input type="password" name="password" >
-  <br/>
-  <b>Enter Contact No: </b><input type="text" name="phno" >
-  <br/>
-    
-  <input type="submit" name="submit" value="Add User">
-  
-    
-</form>
- <button onclick="document.location='mainlogin.html'" class="button">Back</button>
-    </center>
+    <form method="POST">
+        <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="First Name" name="firstname" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="middlename" name="middlename" placeholder="Middle name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="lastname" name="lastname" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="gender" name="gender" placeholder="Gender">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control item" id="email" name="emailid" placeholder="Email" pattern="[^ @]*@[^ @]*" title="Please enter valid email">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control item" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control item" name="phno" id="Phone Number" placeholder="Phone Number">
+        </div>
+
+        <div class="form-group">
+            <button type="button" name="submit"  class="btn btn-block create-account">Create Account</button>
+        </div>
+
+        <div class="form-group">
+            <button type="button" onclick="document.location='mainlogin.html'" class="btn btn-block create-account" >Back</button>
+        </div>
+    </form>
+
+</div>
+
+</body>
 </body>
 </html>
+
+
+
+
