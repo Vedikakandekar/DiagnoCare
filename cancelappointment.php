@@ -9,7 +9,8 @@
    echo $patho_id;
    echo $emailid;
 
- 
-	mysqli_query($con,"delete from user_appointment where appointment_id='$appointment_id'");
+$con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
+
+mysqli_query($con,"delete from user_appointment where appointment_id='$appointment_id'");
 	header('location: appointmentdisplay.php');
 ?>
