@@ -46,7 +46,7 @@ $con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost
 
 $emailid = $_SESSION['patho_emailid'];
 
-$mysqli_result = mysqli_query($con,"select * from pathalogy_login where patho_emailid='$emailid'");
+$mysqli_result = mysqli_query($con,"select * from pathalogy_login where patho_emailid='$emailid' ");
 $numRows = mysqli_num_rows($mysqli_result);
 
 if(mysqli_num_rows($mysqli_result) > 0){
@@ -61,7 +61,7 @@ if(mysqli_num_rows($mysqli_result) > 0){
     }
 
     $_SESSION['patho_id']=$patho_id;
-    $res = mysqli_query($con,"select * from user_appointment where patho_id =$patho_id ");
+    $res = mysqli_query($con,"select * from user_appointment where patho_id =$patho_id and acceptance_status IS NULL");
         foreach($res as $row){
 
 
@@ -80,8 +80,8 @@ if(mysqli_num_rows($mysqli_result) > 0){
             <td><?php echo $row['test_name'] ?></td>
         </tr>
     </table>
-    <a href="#" class="accept" style="margin-left: 400px">ACCEPT <span class="fa fa-check"></span></a>
-    <a href="#" class="deny">DENY <span class="fa fa-close"></span></a>
+    <a href="addPathAppointment.php?appointment_id=<?=$row['appointment_id']?>" class="accept" style="margin-left: 400px">ACCEPT <span class="fa fa-check"></span></a>
+    <a href="RejectPathAppointment.php?appointment_id=<?=$row['appointment_id']?>" class="deny">DENY <span class="fa fa-close"></span></a>
     <hr style="margin: 30px">
 
 
