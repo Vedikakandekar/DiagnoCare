@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("db.php");
+
+?>
 <html>
   <head>
     <style>
@@ -98,8 +103,7 @@ button {
       </tr>
       
 	  <?php
-        session_start();
-        include("db.php");
+
       
 		$emailid= $_SESSION["emailid"];
     if (!isset($_SESSION['emailid'])) {
@@ -115,14 +119,16 @@ button {
 
 
 		echo $emailid;
- 
-     
-        // Select all rows from the pathology_labs table
-        $sql = "SELECT * FROM pathalogy_login";
-        $result = $con->query($sql);
+
+      $con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
+
+      // Select all rows from the pathology_labs table
+        $qr= "SELECT * FROM pathalogy_login";
+      $mysqli_result = $con->query($qr);
+
 
         // Loop through the rows and display the lab names and select buttons
-        while ($row = mysqli_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($mysqli_result)) {
 			
           echo "<tr>";
           echo "<td>" . $row["patho_id"] . "</td>";

@@ -1,13 +1,13 @@
 <?php 
 session_start();
-if (!isset($_SESSION['emailid'])) {
+if (!isset($_SESSION['patho_emailid'])) {
   $_SESSION['msg'] = "You must log in first";
   header('location: index.html');
 }
 
 if (isset($_GET['logout'])) {
   session_destroy();
-  unset($_SESSION['emailid']);
+  unset($_SESSION['patho_emailid']);
   header("location: index.html");
 }
 ?>
@@ -60,7 +60,9 @@ li a:hover:not(.active) {
 </style>
 </head>
 <body>
-
+<?php
+echo $_SESSION['patho_emailid'];
+?>
 <ul>
   
         <li><a href="pathalogyprofile.php">My Profile</a></li>

@@ -1,7 +1,6 @@
 .button-container {
-    display: flex;
-    margin-left: 100px;
-
+    display: compact;
+    width: 30%;
 }
 
 .button {
@@ -12,7 +11,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     margin: 10px;
     cursor: pointer;
     border-radius: 5px;
@@ -21,4 +20,72 @@
 
 .button:hover {
     background-color: #3e8e41;
+}
+
+
+.table{
+    margin-left: 10%;
+    border-collapse: collapse;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+th {
+    background: #c2bdc2;
+    color: white;
+    font-weight: bold;
+    width: 50px;
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 16px;
+    color: black;
+    width: 400px;
+
+}
+
+
+
+
+
+a{
+    text-decoration: none;
+
+}
+.collection {
+    color: black;
+    background: #5ab75a;
+    padding: 10px 10px;
+    box-shadow: 0 4px 0 0 #2EA62E;
+    margin-top: 500px;
+
+}
+.collection:hover {
+    background: #6FE76F;
+    box-shadow: 0 4px 0 0 #7ED37E;
+}
+.progress {
+    color: black;
+    background: #b66d6d;
+    padding: 10px 10px;
+    box-shadow: 0 4px 0 0 #c26262;
+    margin-top: 500px;
+}
+.progress:hover {
+    background: rgb(255, 147, 128);
+    box-shadow: 0 4px 0 0 #b95c5c;
+}
+
+.ready {
+    color: black;
+    background: #4a83ad;
+    padding: 10px 10px;
+    box-shadow: 0 4px 0 0 #30718d;
+    margin-top: 500px;
+}
+.ready:hover {
+    background: rgb(134, 192, 189);
+    box-shadow: 0 4px 0 0 #7fada2;
 }

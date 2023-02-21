@@ -1,8 +1,7 @@
 body {
     margin: 0;
 }
-
-.header ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -15,60 +14,85 @@ body {
 
 }
 
-.header li a {
+li a {
     display: block;
     color: white;
     padding: 16px 32px;
     text-decoration: none;
 }
 
-.header li a.active {
+li a.active {
     background-color: #6eb572;
     color: white;
 }
 
-.header li a:hover:not(.active) {
+li a:hover:not(.active) {
     background-color: #a35555;
     color: white;
 }
+
 body  {
 
-    background-color: #cccccc;
+    background-color: #e3d7d7;
     background-position:center;
     background-size:cover;
     text-decoration-style: wavy;
     background-repeat: no-repeat;
-    width: auto;
-    height:100%;
+    max-height:60%;
+    max-width:200%;
+
 }
 
-.header{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 30%;
-    background-color: #000;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
+
+.table{
+    margin-left: 10%;
+    border-collapse: collapse;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+th {
+    background: #c2bdc2;
     color: white;
-
+    font-weight: bold;
+    width: 50px;
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 16px;
+    color: black;
+    width: 400px;
 
 }
 
-.appointments{
-    width: auto;
-    height: 100%;
-    background-color: #CCCCCCFF;
 
-    justify-content: center;
-    margin: auto;
+
+
+
+a{
+    text-decoration: none;
 
 }
-
-
-.appointments h1 {
-
-    color: #111111;
-    margin-left:650px;
+.accept {
+    color: #FFF;
+    background: #44CC44;
+    padding: 10px 10px;
+    box-shadow: 0 4px 0 0 #2EA62E;
+    margin-top: 500px;
+}
+.accept:hover {
+    background: #6FE76F;
+    box-shadow: 0 4px 0 0 #7ED37E;
+}
+.deny {
+    color: #FFF;
+    background: tomato;
+    padding: 10px 10px;
+    box-shadow: 0 4px 0 0 #CB4949;
+}
+.deny:hover {
+    background: rgb(255, 147, 128);
+    box-shadow: 0 4px 0 0 #EF8282;
 }

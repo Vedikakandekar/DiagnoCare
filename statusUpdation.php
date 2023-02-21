@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
 ?>
 <html>
 <head>
-    <link rel="stylesheet" href="css/pathlogin.css">
+    <link rel="stylesheet" href="css/statusUpdation.css">
 <style>
 body {
   margin: 0;
@@ -76,16 +76,33 @@ li a:hover:not(.active) {
 
 </ul>
 
-<div style="margin-left:50%;padding:1px 16px;height:1000px;">
-
-    <div class="button-container">
-        <button class="button">Button 1</button>
-        <button class="button">Button 2</button>
-        <button class="button">Button 3</button>
-    </div>
-
-
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+    <h1 style="text-align: center">Update Status</h1>
+    <h5 style="margin-left: 50px">
+    <?php echo $_SESSION['patho_emailid'];?>
+    </h5>
+    <table class="table">
+        <tr >
+            <th style="width: 30%">Company</th>
+            <td>Contact</td>
+        </tr>
+        <tr style="height: 1px">
+            <th>Email</th>
+            <td>Maria Anders</td>
+        </tr>
+        <tr>
+            <th>Test Name</th>
+            <td>Maria Anders</td>
+        </tr>
+    </table>
+    <a href="#" class="collection" style="margin-left: 200px"> Sample Collected </a>
+    <a href="#" class="progress"> In Progress </a>
+    <a href="#" class="ready"> Report Is Ready </a>
+    <hr style="margin: 30px">
 </div>
+
+
+
 
 </body>
 </html>

@@ -1,16 +1,16 @@
 <?php 
 session_start();
 include("db.php");
-$_SESSION["patho_emailid"] = "patho_emailid";
-$patho_emailid= $_SESSION["patho_emailid"];
-$_SESSION["patho_id"] = "patho_id";
-$patho_id= $_SESSION["patho_id"];
 
 
 if(isset($_POST['sub']))
 {
 $patho_emailid = $_POST['patho_emailid'];
 $patho_password = $_POST['patho_password'];
+
+	$_SESSION["patho_emailid"] = $patho_emailid;
+
+	$con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
 
 
 $res = mysqli_query($con,"select* from pathalogy_login where patho_emailid='$patho_emailid'and patho_password='$patho_password'");
