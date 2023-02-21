@@ -1,7 +1,6 @@
 <?php
-
 session_start();
-require_once("db.php");
+include("db.php");
 if (isset($_GET['pathology'])) {
     $pathname = $_GET['pathology'];
     $_SESSION['pathname'] = $pathname;
@@ -32,7 +31,8 @@ if (isset($_GET['available_tests']) && isset($_GET['appointment_date']) && isset
 
 //fetch the test details from test tabble
     $test_id_query = "SELECT test_id,test_cost FROM test_details WHERE test_name='$available_tests'";
-    $test_id_result = $con->query($test_id_query);
+
+    $test_id_result = mysqli_query($con,$test_id_query);
     foreach ($test_id_result as $row) {
         $test_id = $row["test_id"];
         $test_cost = $row['test_cost'];
@@ -52,12 +52,13 @@ if (isset($_GET['available_tests']) && isset($_GET['appointment_date']) && isset
     $lastname = $getContent["lastname"];
     $user_id = $getContent["user_id"];
 
+    $addr = $_GET['addr'];
 
 // Insert the appointment details into the appointment table
 // echo $path_id,$path_name,$fisrtname,$lastname,$user_id;
 
 // mysqli_query($con, "INSERT INTO user_appointment (test_id, date,time,patho_id,patho_name,user_id,firstname,lastname, emailid) VALUES ('$test_id', '$appointment_date ','$appt:00', ,'$path_id','$path_name','$user_id','$fisrtname','$lastname','$emailid')");
-    $sql = "INSERT INTO user_appointment (test_id,test_name,test_cost, date,time,patho_id,patho_name,user_id,firstname,lastname, emailid) VALUES ('$test_id','$available_tests','$test_cost', '$appointment_date ','$appt:00',$path_id,'$path_name',$user_id,'$fisrtname','$lastname','$emailid')";
+    $sql = "INSERT INTO user_appointment (test_id,test_name,test_cost, date,time,patho_id,patho_name,user_id,firstname,lastname, emailid) VALUES ('$test_id','$available_tests','$test_cost', '$appointment_date ','$appt:00',$path_id,'$path_name',$user_id,'$fisrtname','$lastname','$emailid','$addr','paid')";
 // if($sql==TRUE){
 //   $con->query($sql);
 // }
@@ -216,6 +217,8 @@ $emailid = $_SESSION["emailid"];
             border-radius: 5px;
             cursor: pointer;
         }
+
+
     </style>
 </head>
 <body>
@@ -240,7 +243,9 @@ if ($result->num_rows > 0) {
         $patient_name = $row["firstname"];
         $testname = $row["test_name"];
         $testcost = $row["test_cost"];
-        //$payment_status = $row["payment_status"];
+        $payment_status = "paid";
+        $addr = $row["address"];
+//        $payment_status = $row["payment_status"];
 
     }
 
@@ -259,7 +264,7 @@ $con->close();
         <th>Patient Name</th>
         <th>Test Name</th>
         <th>Test Cost</th>
-
+         <th>Address</th>
         <th>Payment Status</th>
     </tr>
     <tr>
@@ -288,7 +293,11 @@ $con->close();
             <?php echo $row["test_cost"]; ?>
         </td>
         <td>
-            <?php echo $row["payment_status"]; ?>
+            <?php echo $row["payment_status"];
+//<?php //echo $row["payment_status"]; ?>
+        </td>
+        <td>
+            <?php echo $row["address"];?>
         </td>
     </tr>
     <?php

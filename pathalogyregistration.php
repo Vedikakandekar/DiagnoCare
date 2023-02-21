@@ -75,8 +75,9 @@ $patho_emailid=$_POST['patho_emailid'];
 $patho_password=$_POST['patho_password'];
 $patho_phno=$_POST['patho_phno'];
 $patho_addr=$_POST['patho_addr'];
-    
-    
+
+    $con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
+
     $insert = mysqli_query($con," INSERT INTO pathalogy_login( patho_name,patho_emailid,patho_password,patho_phno,patho_addr) VALUES ( '$patho_name','$patho_emailid','$patho_password','$patho_phno','$patho_addr')");
 
     if(!$insert)

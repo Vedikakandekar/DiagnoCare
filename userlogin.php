@@ -6,8 +6,8 @@ $emailid= $_SESSION["emailid"];
 
 if(isset($_POST['sub']))
 {
-$emailid = $_POST['emailid'];
-$password = $_POST['password'];
+$emailid = $_POST['patho_emailid'];
+$password = $_POST['patho_password'];
 
 
 $res = mysqli_query($con,"select* from user_login where emailid='$emailid'and password='$password'");
@@ -24,7 +24,8 @@ else
 {
 	
 	//echo "failed ";
-	echo "<script type='text/javascript'>alert('Invalid Username or Password');location='userlogin.html';</script>";
+	echo "<script type='text/javascript'>alert('Invalid Username or Password');
+//    location='userlogin.html';</script>";
 
 
 }
