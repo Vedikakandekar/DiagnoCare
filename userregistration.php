@@ -1,61 +1,12 @@
 <html>
     <head>
    <center>
-            <h1><i>User Registration</i></h1> 
+       <div class="pathlogin"><p>User Login</p></div>
            </center>
-        
-    <style> 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color:black;
- color:white;
-    
-}
-     .button {
-width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-        
-           input[type=email] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("aal3.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-        width:auto-inherit;
-        height:40%;
-}
- 
   
-</style>
-    
-    
- 
+    <link rel="stylesheet" href="css/userregistration.css">
+
+
     </head>
  
 
