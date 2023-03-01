@@ -1,66 +1,11 @@
 <html>
     <head>
    <center>
-            <h1><i>Pathalogy Registration</i></h1> 
+            <h1>Pathalogy Registration</h1> 
            </center>
-        
-    <style> 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color:black;
- color:white;
-    
-}
-     .button {
-width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-        
-           input[type=email] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("aal3.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-        width:auto-inherit;
-        height:40%;
-}
- 
-  
-</style>
-    
-    
- 
+<link rel="stylesheet" href="css/pathalogyregistration.css">
     </head>
- 
-
-
-        
+  
 <body>
     <center>
 
@@ -95,24 +40,20 @@ mysqli_close($con); // Close connection
 
 
 <form method="POST">
-   
-   
-<b>Enter Pathalogy Name : </b><input type="text" name="patho_name" >
-  <br/>
-         <b>Enter E-mail ID : </b><input type="text" name="patho_emailid" >
-  <br/>
-        <b> Enter Contact Number : </b><input type="text" name="patho_phno" >
-  <br/>
-      <b>Enter Address : </b><input type="text" name="patho_addr" >
-  <br/>
-         <b>Enter Password: </b><input type="password" name="patho_password" >
-  <br/>
-
-  <input type="submit" name="submit" value="Add User">
-  
+    
+    <form method="POST">
+        <div class="textfield">
+            <p><input type="text" name="patho_name" placeholder="Enter Pathalogy name" required></p>
+            <p><input type="email" name="patho_emailid" placeholder="Enter Email " pattern="^[a-z0-9](\.?[a-z0-9]){2,}@g(oogle)?mail\.com$" title="Please enter valid email" required></p>
+            <p><input type="password" name="patho_password" placeholder="Enter Passworrd"></p>
+            <p><input type="text" name="patho_phno" placeholder="Phone Number" pattern="^[789]\d{9}$" title="Please enter valid Number" required></p>
+            <p><input type="text" name="patho_addr" placeholder="Enter Address" ></p>
+            <input type="submit" name="submit" value="Register">
+            <button onclick="document.location='mainlogin.html'" class="button">Back</button>
+        </div>
     
 </form>
- <button onclick="document.location='mainlogin.html'" class="button">Back</button>
+ 
     </center>
 </body>
 </html>

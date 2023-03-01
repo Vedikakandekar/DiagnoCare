@@ -46,9 +46,9 @@ mysqli_close($con); // Close connection
         <p><input type="text" name="middlename" placeholder="Enter Middle name" required></p>
         <p><input type="text" name="lastname" placeholder="Enter Last name" required></p>
         <p><input type="text" name="gender" placeholder="Gender" ></p>
-        <p><input type="email" name="emailid" placeholder="Enter Email " pattern="[^ @]*@[^ @]*" title="Please enter valid email" required></p>
+        <p><input type="email" name="emailid" placeholder="Enter Email " pattern="^[a-z0-9](\.?[a-z0-9]){2,}@g(oogle)?mail\.com$" title="Please enter valid email" required></p>
         <p><input type="password" name="password" placeholder="Enter Passworrd"></p>
-        <p><input type="text" name="phno" placeholder="Phone Number" required></p>
+        <p><input type="text" name="phno" placeholder="Phone Number" pattern="^[789]\d{9}$" title="Please enter valid Number" required></p>
         <input type="submit" name="submit" value="Add User">
         <button onclick="document.location='mainlogin.html'" class="button">Back</button>
     </div>
