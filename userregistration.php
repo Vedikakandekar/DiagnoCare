@@ -5,13 +5,8 @@
            </center>
   
     <link rel="stylesheet" href="css/userregistration.css">
-
-
     </head>
- 
-
-
-        
+    
 <body>
     <center>
 
@@ -46,29 +41,19 @@ mysqli_close($con); // Close connection
 
 
 <form method="POST">
-   
-   
-<b>Enter First Name : </b><input type="text" name="firstname" >
-  <br/>
-         <b>Enter Middle Name: </b><input type="text" name="middlename" >
-  <br/>
-        <b> Enter Last Name : </b><input type="text" name="lastname" >
-  <br/>
-      <b>Enter Gender : </b><input type="text" name="gender" >
-  <br/>
-  
-        <b>Enter Email-Id : </b><input type="email" name="emailid" >
-  <br/>
-         <b>Enter Password: </b><input type="password" name="password" >
-  <br/>
-  <b>Enter Contact No: </b><input type="text" name="phno" >
-  <br/>
-    
-  <input type="submit" name="submit" value="Add User">
-  
+    <div class="textfield">
+        <p><input type="text" name="firstname" placeholder="Enter First name" required></p>
+        <p><input type="text" name="middlename" placeholder="Enter Middle name" required></p>
+        <p><input type="text" name="lastname" placeholder="Enter Last name" required></p>
+        <p><input type="text" name="gender" placeholder="Gender" ></p>
+        <p><input type="email" name="emailid" placeholder="Enter Email " pattern="[^ @]*@[^ @]*" title="Please enter valid email" required></p>
+        <p><input type="password" name="password" placeholder="Enter Passworrd"></p>
+        <p><input type="text" name="phno" placeholder="Phone Number" required></p>
+        <input type="submit" name="submit" value="Add User">
+        <button onclick="document.location='mainlogin.html'" class="button">Back</button>
+    </div>
     
 </form>
- <button onclick="document.location='mainlogin.html'" class="button">Back</button>
-    </center>
+ 
 </body>
 </html>

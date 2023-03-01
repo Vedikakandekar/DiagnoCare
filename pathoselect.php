@@ -4,7 +4,7 @@ include("db.php");
 
 ?>
 <html>
-  <head>
+  <head>t
     <style>
       table { 
         width: 750px; 
@@ -18,7 +18,7 @@ tr:nth-of-type(odd) {
       }
 
 th { 
-        background: #3498db; 
+        background: #494b4d;
         color: white; 
         font-weight: bold; 
       }
@@ -82,7 +82,7 @@ button {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
-  background-color: #009900;
+  background-color: #5d695d;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -92,7 +92,6 @@ button {
   </head>
   <body>
 
-  <button onclick="document.location='userdashboard.php'" class="button">Back</button>
   <form method="post" action="bookappointment.php">
     <table>
       <tr>
@@ -152,6 +151,7 @@ button {
         
       ?>
     </table>
+      <button onclick="document.location='userdashboard.php'" class="button">Back</button>
   </body>
   
 
