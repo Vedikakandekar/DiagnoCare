@@ -1,58 +1,12 @@
 <html>
     <head>
+        <link rel="stylesheet" href="css/testregistration.css">
    <center>
-            <h1><i>Enter Test Details</i></h1> 
+            <h1>Enter Test Details</h1> 
            </center>
         
     <style> 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
 
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color:black;
- color:white;
-    
-}
-     .button {
-width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-        
-           input[type=email] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("aal3.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-        width:auto-inherit;
-        height:40%;
-}
- 
-  
 </style>
     
     
@@ -115,29 +69,20 @@ mysqli_close($con); // Close connection
 
 
 <form method="POST">
- 
-<b>Pathalogy ID: </b><input type="text" value="<?php echo $getContent['patho_id']; ?>" name="patho_id"  readonly>
-           <br>
-          <br>
-   
-<b>Pathalogy Name: </b><input type="text" value="<?php echo $getContent['patho_name']; ?>" name="patho_name" readonly >
-           <br>
-          <br>
-         <b>Test Name : </b><input type="text" name="test_name" >
-  <br/>
-        <b> Test Cost : </b><input type="text" name="test_cost" >
-  <br/>
-
-      <b> Test Instructions : </b><textarea rows="4" cols="50" name="test_instructions" >Enter Instructions of Test ...</textarea>
-
- <br>
-
-  <input type="submit" name="submit" value="Add test">
-
-  
     
+<center>
+    <div class="textfield">
+        <p>Test Name <input type="text" name="test_name"></p>
+        <p>Test Cost <input type="text" name="test_cost" ></p>
+            
+        <p style="margin-right: 30px">Test  Instructions :<textarea rows="4" cols="45" name="test_instructions" >Enter Instructions of Test ...</textarea></p>
+        <br>    
+        <input type="submit" name="submit" value="Add test">
+            <button onclick="document.location='pathalogydashboard.php'" class="button">Back</button>
+    </div>
+</center>
 </form>
- <button onclick="document.location='pathalogydashboard.php'" class="button">Back</button>
+ 
     </center>
 </body>
 </html>

@@ -1,66 +1,12 @@
 <html>
     <head>
    <center>
-            <h1><i>User Registration</i></h1> 
+       <div class="pathlogin"><p>User Login</p></div>
            </center>
-        
-    <style> 
-input[type=text] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-input[type=submit] {
-  width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color:black;
- color:white;
-    
-}
-     .button {
-width: 10%;
-  padding: 12px 20px;
-border: 1px solid #555;
- background-color: black;
- color:white;
-    
-}
-           input[type=password] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-        
-           input[type=email] {
-  width: 25%;
-  padding: 10px 20px;
-  margin: 5px 0;
- border: 1px solid black; 
-}
-         body  {
-  background-image: url("aal3.jpg");
-  background-color: #cccccc;
-        background-position:center;
-        background-size:cover;
-        text-decoration-style: wavy;
-        background-repeat: no-repeat;
-        width:auto-inherit;
-        height:40%;
-}
- 
   
-</style>
-    
-    
- 
+    <link rel="stylesheet" href="css/userregistration.css">
     </head>
- 
-
-
-        
+    
 <body>
     <center>
 
@@ -92,32 +38,19 @@ $emailid=$_POST['emailid'];
 
 mysqli_close($con); // Close connection
 ?>
+        <form method="POST">
+            <div class="textfield">
+                <p><input type="text" name="patho_name" placeholder="Enter First Name" required></p>
+                <p><input type="text" name="patho_name" placeholder="Enter Middle Name" required></p>
+                <p><input type="text" name="patho_name" placeholder="Enter Last Name" required></p>
+                <p><input type="email" name="patho_emailid" placeholder="Enter Email " pattern="^[a-z0-9](\.?[a-z0-9]){2,}@g(oogle)?mail\.com$" title="Please enter valid email" required></p>
+                <p><input type="password" name="patho_password" placeholder="Enter Passworrd"></p>
+                <p><input type="text" name="patho_phno" placeholder="Phone Number" pattern="^[789]\d{9}$" title="Please enter valid Number" required></p>
+                <p><input type="text" name="patho_addr" placeholder="Enter Address" ></p>
+                <input type="submit" name="submit" value="Add User">
+                <button onclick="document.location='mainlogin.html'" class="button">Back</button>
+            </div>
 
-
-<form method="POST">
-   
-   
-<b>Enter First Name : </b><input type="text" name="firstname" >
-  <br/>
-         <b>Enter Middle Name: </b><input type="text" name="middlename" >
-  <br/>
-        <b> Enter Last Name : </b><input type="text" name="lastname" >
-  <br/>
-      <b>Enter Gender : </b><input type="text" name="gender" >
-  <br/>
-  
-        <b>Enter Email-Id : </b><input type="email" name="emailid" >
-  <br/>
-         <b>Enter Password: </b><input type="password" name="password" >
-  <br/>
-  <b>Enter Contact No: </b><input type="text" name="phno" >
-  <br/>
-    
-  <input type="submit" name="submit" value="Add User">
-  
-    
-</form>
- <button onclick="document.location='mainlogin.html'" class="button">Back</button>
-    </center>
+        </form>
 </body>
 </html>

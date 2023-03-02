@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+
+
+body  {
+    background-image: url("employeehome.jpg");
+    background-color: #cccccc;
+    background-position:center;
+    background-size:cover;
+    text-decoration-style: wavy;
+    background-repeat: no-repeat;
+    width: auto;
+    height:40%;
+    background-color: #918f8f;
+}
+
+
+
+
+
+li a {
+    display: block;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #6eb572;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #a35555;
+    color: white;
+}
+
+.dashboard ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    background-color: #000000;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    color: white;
+
+}
+/*.main p{*/
+/*    width: 85%;*/
+/*    margin-left:55%;*/
+/*    font-size: 30px;*/
+/*overflow: hidden;*/
+/*}*/
+/*.main h1{*/
+/*    width: 85%;*/
+/*    margin-left:55%;*/
+/*    font-size: 30px;*/
+/*    overflow: hidden;*/
+/*}*/
+/*.main pre{*/
+/*    width: 85%;*/
+/*    margin-left:40%;*/
+/*    font-size: 30px;*/
+/*    overflow: hidden;*/
+/*}*/
