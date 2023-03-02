@@ -34,16 +34,24 @@ th {
     background: #c2bdc2;
     color: white;
     font-weight: bold;
-    width: 50px;
+    width: max-content;
 }
-th, td {
+td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 16px;
+    color: black;
+    width: max-content;
+
+}
+th{
     padding: 5px;
     border: 1px solid #ccc;
     text-align: left;
     font-size: 16px;
     color: black;
     width: 400px;
-
 }
 
 
@@ -56,36 +64,36 @@ a{
 }
 .collection {
     color: black;
-    background: #5ab75a;
+    background: #937c7c;
     padding: 10px 10px;
-    box-shadow: 0 4px 0 0 #2EA62E;
+    box-shadow: 0 4px 0 0 #645553;
     margin-top: 500px;
 
 }
 .collection:hover {
-    background: #6FE76F;
-    box-shadow: 0 4px 0 0 #7ED37E;
+    background: #5c8c5c;
+    box-shadow: 0 4px 0 0 #5e9a5e;
 }
 .progress {
     color: black;
-    background: #b66d6d;
+    background: #a67b7b;
     padding: 10px 10px;
-    box-shadow: 0 4px 0 0 #c26262;
+    box-shadow: 0 4px 0 0 #866363;
     margin-top: 500px;
 }
 .progress:hover {
-    background: rgb(255, 147, 128);
-    box-shadow: 0 4px 0 0 #b95c5c;
+    background: rgb(141, 103, 96);
+    box-shadow: 0 4px 0 0 #724040;
 }
 
 .ready {
     color: black;
-    background: #4a83ad;
+    background: #5c788d;
     padding: 10px 10px;
-    box-shadow: 0 4px 0 0 #30718d;
+    box-shadow: 0 4px 0 0 #406677;
     margin-top: 500px;
 }
 .ready:hover {
-    background: rgb(134, 192, 189);
-    box-shadow: 0 4px 0 0 #7fada2;
+    background: rgb(79, 119, 117);
+    box-shadow: 0 4px 0 0 #5f8179;
 }

@@ -31,17 +31,6 @@ li a:hover:not(.active) {
     color: white;
 }
 
-body  {
-
-    background-color: #e3d7d7;
-    background-position:center;
-    background-size:cover;
-    text-decoration-style: wavy;
-    background-repeat: no-repeat;
-    max-height:60%;
-    max-width:200%;
-
-}
 
 
 .table{
@@ -77,20 +66,20 @@ a{
 }
 .accept {
     color: #FFF;
-    background: #44CC44;
+    background: #5c788d;
     padding: 10px 10px;
-    box-shadow: 0 4px 0 0 #2EA62E;
+    box-shadow: 0 4px 0 0 #48698d;
     margin-top: 500px;
 }
 .accept:hover {
-    background: #6FE76F;
+    background: #7bb27b;
     box-shadow: 0 4px 0 0 #7ED37E;
 }
 .deny {
     color: #FFF;
-    background: tomato;
+    background: #937c7c;
     padding: 10px 10px;
-    box-shadow: 0 4px 0 0 #CB4949;
+    box-shadow: 0 4px 0 0 #5d4646;
 }
 .deny:hover {
     background: rgb(255, 147, 128);

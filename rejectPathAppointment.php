@@ -10,4 +10,6 @@ echo $appointment_id;
 $mysqli_result = mysqli_query($con,"update user_appointment set acceptance_status='no' where appointment_id = $appointment_id");
 header('location: pathAppointments.php');
 echo $mysqli_result;
+
+
 ?>

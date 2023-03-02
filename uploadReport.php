@@ -13,6 +13,24 @@ if (isset($_GET['logout'])) {
     header("location: index.html");
 }
 ?>
+
+<?php
+
+$patho_id=$_SESSION['patho_id'];
+//echo $patho_id;
+$appointment_id = $_GET['appointment_id'];
+include("db.php");
+
+$con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
+
+$mysqli_result = mysqli_query($con,"update path_appointments set test_progress='Report is Ready' where appointment_id = $appointment_id");
+
+
+
+
+?>
+
+
 <html>
 <head>
     <link rel="stylesheet" href="css/statusUpdation.css">
@@ -81,24 +99,60 @@ if (isset($_GET['logout'])) {
 </ul>
 
 <div class="maindiv" style="margin-left:25%;padding:1px 16px;height:1000px;">
-    <h1 style="text-align: center">Update Status</h1>
-    <h5 style="margin-left: 50px">
-        <?php echo $_SESSION['patho_emailid'];?>
-    </h5>S
+    <h1 style="text-align: center">Upload Report</h1>
 
-    <?php
-
-    include("db.php");
-    $con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
-    $emailid = $_SESSION['patho_emailid'];
+    <center>
+        <form method="post"  enctype="multipart/form-data">
+            <label for="file">Select a file to upload:</label>
+            <input type="file" name="file" id="file"><br><br>
+            <input type="submit" name="submit" value="Upload">
 
 
-    $mysqli_result = mysqli_query($con,"select * from pathalogy_login where patho_emailid='$emailid' ");
+        </form>
+
+    </center>
+
+</div>
+
+<?php
+if(isset($_POST['submit'])){
+    $fileName = $_FILES['file']['name'];
+    $fileTmpName = $_FILES['file']['tmp_name'];
+    $fileType = $_FILES['file']['type'];
+    $fileSize = $_FILES['file']['size'];
+
+    // open the file in read mode
+    $file = fopen($fileTmpName, 'r');
+    $content = fread($file, $fileSize);
+    $content = addslashes($content);
+    fclose($file);
+
+    // connect to the database
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $database = 'odlms';
+    $conn = mysqli_connect($host, $user, $password, $database);
+
+
+    $appointment_id = $_GET['appointment_id'];
+    $patho_id=$_SESSION['patho_id'];
+
+    $sql = "select * from path_appointments where appointment_id = $appointment_id";
+
+    $mysqli_result = mysqli_query($conn,$sql);
+
     $numRows = mysqli_num_rows($mysqli_result);
 
     if(mysqli_num_rows($mysqli_result) > 0){
         while($row = mysqli_fetch_assoc($mysqli_result)){
-            $patho_id = $row["patho_id"];
+
+
+            $test_id = $row['test_id'];
+
+            $user_id = $row['user_id'];
+
+            $patho_name = $row['patho_name'];
         }
     }
     else{
@@ -107,42 +161,24 @@ if (isset($_GET['logout'])) {
 
     }
 
-    $_SESSION['patho_id']=$patho_id;
-    $res = mysqli_query($con,"select * from path_appointments where patho_id = $patho_id and test_progress!='Report is Ready'");
-    foreach($res as $row){
-        ?>
+    // insert file into database
+    $query = "INSERT INTO files (name, type, size, content,appointment_id,user_id,patho_id,test_id) VALUES ('$fileName', '$fileType', '$fileSize', '$content',$appointment_id,$user_id,$patho_id,$test_id)";
+    $result = mysqli_query($conn, $query);
 
-
-
-        <table class="table">
-            <tr >
-                <th style="width: 30%">Client's Name : </th>
-                <td><?php echo $row['clientFname'],"  ",$row['clientLname'] ?></td>
-                <th>Current Status :</th>
-                <td><?php if( $row['test_progress']==null){echo "N/A";}else{echo $row['test_progress'];}  ?></td>
-            </tr>
-            <tr style="height: 1px">
-                <th>Test Name</th>
-                <td><?php echo $row['test_name']  ?></td>
-                <th>Addreess :</th>
-                <td><?php echo $row['client_addr']   ?></td>
-            </tr>
-        </table>
-        <a href="sampleCollected.php?appointment_id=<?=$row['appointment_id']?>" class="collection" style="margin-left: 200px"> Sample Collected </a>
-        <a href="inProgress.php?appointment_id=<?=$row['appointment_id']?>" class="progress"> In Progress </a>
-        <a href="uploadReport.php?appointment_id=<?=$row['appointment_id'] ?>" class="ready"> Report Is Ready </a>
-        <hr style="margin: 30px ; ">
-
-        <?php
+    if($result){
+        echo "File uploaded successfully.";
+    } else{
+        echo "File upload failed.";
     }
 
+    mysqli_close($conn);
 
-    ?>
-</div>
-
-
-
+}
+?>
 
 
 </body>
 </html>
+
+
+

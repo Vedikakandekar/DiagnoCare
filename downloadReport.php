@@ -1,16 +1,43 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['emailid'])) {
+if (!isset($_SESSION['patho_emailid'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: index.html');
 }
 
 if (isset($_GET['logout'])) {
     session_destroy();
-    unset($_SESSION['emailid']);
+    unset($_SESSION['patho_emailid']);
     header("location: index.html");
 }
+
+
+if (isset($_POST['submit'])) {
+    echo "Download Var Set ";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "odlms";
+
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $test_id = $_GET['test_id'];
+    $sql = "SELECT content FROM files WHERE test_id=$test_id";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    file_put_contents('C:/wamp64/www/DiagnoCare/downloadedReport/report', $row['content']);
+
+    ?>
+    <script>
+        alert("<?php echo "File downloaded to C:/wamp64/www/DiagnoCare/downloadedReport" ?>");
+
+    </script>
+
+    <?php
+
+
+}
+
 
 ?>
 <html>
@@ -50,7 +77,7 @@ if (isset($_GET['logout'])) {
             color: white;
         }
         body  {
-            background-image: url("employeehome.jpg");
+
             background-color: #cccccc;
             background-position:center;
             background-size:cover;
@@ -76,9 +103,18 @@ if (isset($_GET['logout'])) {
 
 </ul>
 
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div style="margin-left:30%;padding:1px 16px;height:1000px;">
 
+
+    <h1>Download Report</h1>
+    <form method="POST"  enctype="multipart/form-data">
+
+        <input type="submit" name="submit" value="Download">
+        <button onclick="document.location='userTestProgress.php'" class="button">Back</button>
+
+    </form>
 </div>
 
 </body>
 </html>
+
