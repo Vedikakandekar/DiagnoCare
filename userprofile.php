@@ -33,10 +33,10 @@
 
         <div class="textfield">
             <p>Username      <input type="text" name="Username" value="<?php echo $getContent['firstname']." ".$getContent['middlename']." ".$getContent['lastname']; ?>" name="username" readonly ></p>
-            <p>Gender-       <input type="text" name="gender" value="<?php echo $getContent['gender']; ?>" name="gender" readonly></p>
-            <p>Email ID      <input type="text" name="emailid" value="<?php echo $getContent['emailid']; ?>" name="emailid"></p>
+            <p>Address-       <input type="text" name="addr" value="<?php echo $getContent['addr']; ?>" name="addr" ></p>
+            <p>Email ID      <input type="text" name="emailid" value="<?php echo $getContent['emailid']; ?>" name="emailid" readonly></p>
             <p>Password      <input type="text" name="password" value="<?php echo $getContent['password']; ?>" name="password"></p>
-            <p>Contact <input type="text" name="phno" value="<?php echo $getContent['phno']; ?>" name="phno"></p>
+            <p>Contact <input type="text" name="phno" value="<?php echo $getContent['phno']; ?>" name="phno" pattern="^[789]\d{9}$"></p>
             <input type="submit" name="Update">
             <button onclick="document.location='mainlogin.html'" class="button">Back</button>
         </div>

@@ -41,7 +41,6 @@ if (isset($_GET['logout'])) {
 
 <body>
 
-<?php echo "Patho_ID is : ",$_SESSION['patho_id'] ?>
 <ul>
 
     <li><a href="pathalogyprofile.php">My Profile</a></li>

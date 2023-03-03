@@ -14,7 +14,7 @@ if (isset($_GET['logout'])) {
 
 
 if (isset($_POST['submit'])) {
-    echo "Download Var Set ";
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
     <li><a  href="pathoselect.php">Pathalogy Labs</a></li>
     <li><a  href="appointmentdisplay.php">Appointments</a></li>
     <li><a href="userTestProgress.php">Test Progress</a></li>
-    <li><a href="">Report History</a></li>
+    <li><a href="userReportHistory.php">Report History</a></li>
 
     <li><a href="./index.html" >Log Out</a></li>
 
@@ -110,7 +110,7 @@ if (isset($_POST['submit'])) {
     <form method="POST"  enctype="multipart/form-data">
 
         <input type="submit" name="submit" value="Download">
-        <button onclick="document.location='userTestProgress.php'" class="button">Back</button>
+
 
     </form>
 </div>

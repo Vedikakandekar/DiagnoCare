@@ -83,7 +83,7 @@ if (isset($_GET['logout'])) {
 <div class="maindiv" style="margin-left:25%;padding:1px 16px;height:1000px;">
     <h1 style="text-align: center">Update Status</h1>
     <h5 style="margin-left: 50px">
-        <?php echo $_SESSION['patho_emailid'];?>
+
     </h5>S
 
     <?php
@@ -122,10 +122,10 @@ if (isset($_GET['logout'])) {
                 <td><?php if( $row['test_progress']==null){echo "N/A";}else{echo $row['test_progress'];}  ?></td>
             </tr>
             <tr style="height: 1px">
-                <th>Test Name</th>
+                <th style="width: 30%">Test Name</th>
                 <td><?php echo $row['test_name']  ?></td>
-                <th>Addreess :</th>
-                <td><?php echo $row['client_addr']   ?></td>
+                <th style="width: 30%">Addreess :</th>
+                <td ><?php echo $row['client_addr']   ?></td>
             </tr>
         </table>
         <a href="sampleCollected.php?appointment_id=<?=$row['appointment_id']?>" class="collection" style="margin-left: 200px"> Sample Collected </a>

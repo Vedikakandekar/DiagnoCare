@@ -98,7 +98,7 @@ if (isset($_GET['logout'])) {
 
 <div style="margin-left:30%;padding:1px 16px;height:1000px;">
 
-    <center><h1><i> Test Progress </i></h1></center>
+    <center><h1><i> Report History </i></h1></center>
 
 
 
@@ -111,7 +111,7 @@ if (isset($_GET['logout'])) {
 
             <th>Test Name</th>
 
-            <th>Test Progress</th>
+            <th>Report</th>
 
         </tr>
 
@@ -123,7 +123,7 @@ if (isset($_GET['logout'])) {
         $con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
 
         $userid = $_SESSION['user_id'];
-        $result=mysqli_query($con,"select * from path_appointments where user_id='$userid' and test_progress!='Report is Ready' OR test_progress IS NULL "); //added when error occured
+        $result=mysqli_query($con,"select * from path_appointments where user_id='$userid' and test_progress='Report is Ready' "); //added when error occured
 
 
 
@@ -150,19 +150,22 @@ if (isset($_GET['logout'])) {
 
                     <td>
 
-                        <?php echo $row["test_progress"];?>
+                            <a href="DownloadReport.php?test_id=<?=$row['test_id']?>">Download Report</a>
+
                     </td>
 
 
                     </tr>
                     <?php
 
-                }
+                }?>
+
+
+
+                <?php
+
+
                 ?>
-
-
-
-
                 </tbody>
             </table>
 
@@ -175,4 +178,5 @@ if (isset($_GET['logout'])) {
 
 </body>
 </html>
+
 

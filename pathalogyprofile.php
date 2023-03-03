@@ -32,7 +32,7 @@
             <p>Name:      <input type="text" name="patho_name" value="<?php echo $getContent['patho_name']; ?>" name="patho_name"></p>
             <p>Email ID      <input type="text" name="patho_emailid" value="<?php echo $getContent['patho_emailid']; ?>" name="patho_emailid" readonly></p>
             <p>Password      <input type="text" name="patho_password" value="<?php echo $getContent['patho_password']; ?>" name="patho_password"></p>
-            <p>Contact <input type="text" name="patho_phno" value="<?php echo $getContent['patho_phno']; ?>" name="patho_phno"></p>
+            <p>Contact <input type="text" name="patho_phno" value="<?php echo $getContent['patho_phno']; ?>" name="patho_phno" pattern="^[789]\d{9}$"></p>
             <p>Address: <input type="text" name="patho_addr" value="<?php echo $getContent['patho_addr']; ?>" name="patho_addr"></p>
             <br>
             <input type="submit" name="Update">

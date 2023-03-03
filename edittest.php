@@ -6,8 +6,7 @@
      $patho_id= $_SESSION["patho_id"];
      $test_id=$_GET['test_id'];
 
-    echo $patho_emailid;
-    echo $patho_id;
+
 
 	$query=mysqli_query($con,"select * from test_details where test_id='$test_id'");
 	$row=mysqli_fetch_array($query);
@@ -17,6 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="css/testregistration.css">
     <style>
     input[type=submit] {
   width: 10%;
@@ -55,7 +55,8 @@ border: 1px solid #555;
     <center>
     
 	
-	<form method="POST" action="updatetestdetails.php?test_id=<?php echo $test_id; ?>">  //got error in this testid & path id
+	<form method="POST" action="updatetestdetails.php?test_id=<?php echo $test_id; ?>">
+<!--        got error in this testid & path id-->
 		<b>Edit Test Name: </b><input type="text" value="<?php echo $row['test_name']; ?>" name="test_name">
         <br>
         <br>

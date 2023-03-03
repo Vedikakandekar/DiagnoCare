@@ -19,7 +19,7 @@
     //   unset($_SESSION['emailid']);
     //   header("location: index.html");
     // }
-    echo $emailid;
+
 
 ?>
 <html>

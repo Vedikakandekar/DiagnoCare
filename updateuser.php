@@ -6,6 +6,7 @@ session_start();
 	 $emailid = $_POST['emailid'];
     $password = $_POST['password'];
  $phno = $_POST['phno'];
+ $addr = $_POST['addr'];
    
  if (!isset($_SESSION['emailid'])) {
     $_SESSION['msg'] = "You must log in first";
@@ -21,7 +22,7 @@ if (isset($_GET['logout'])) {
 
 
 
- $update = mysqli_query($con," update user_login  set  emailid='$emailid', password='$password' , phno='$phno' where phno='$phno' ");
+ $update = mysqli_query($con," update user_login  set  emailid='$emailid', password='$password' , phno='$phno',addr='$addr' where phno='$phno' ");
 
     if(!$update)
     {

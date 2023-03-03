@@ -48,7 +48,7 @@ mysqli_close($con); // Close connection
                 <p><input type="text" name="phno" placeholder="Phone Number" pattern="^[789]\d{9}$" title="Please enter valid Number" required></p>
                 <p><input type="text" name="addr" placeholder="Enter Address" ></p>
                 <input type="submit" name="submit" value="Add User">
-                <button onclick="document.location='mainlogin.html'" class="button">Back</button>
+                <button onclick="document.location='index.html'" class="button">Back</button>
             </div>
 
         </form>

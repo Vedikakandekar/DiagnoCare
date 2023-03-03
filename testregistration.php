@@ -33,9 +33,13 @@
    
        //$row=mysqli_fetch_assoc($result);
        $getContent = mysqli_query($con,"SELECT * FROM pathalogy_login where patho_emailid='$patho_emailid'");
-       $getContent = mysqli_fetch_assoc($getContent);
-   
-    
+
+
+if(mysqli_num_rows($getContent) > 0){
+    while($row = mysqli_fetch_assoc($getContent)){
+        $patho_name = $row["patho_name"];
+    }
+}
   ?>
 
 <?php                             
@@ -44,8 +48,8 @@ include "db.php";
 if(isset($_POST['submit']))
 {	
  
-    $patho_id=$_POST['patho_id'];
-$patho_name=$_POST['patho_name'];
+    $patho_id=$_SESSION['patho_id'];
+
 $test_name=$_POST['test_name'];
 $test_cost=$_POST['test_cost'];
 $test_instructions=$_POST['test_instructions'];

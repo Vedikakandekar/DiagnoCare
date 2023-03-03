@@ -6,8 +6,7 @@
      $appointment_id=$_GET['appointment_id'];
      $emailid= $_SESSION["emailid"];
     
-    echo $emailid;
-  echo $appointment_id;
+
 
 	$query = mysqli_query($con, "select * from user_appointment where appointment_id='$appointment_id'");
 if ($query && mysqli_num_rows($query) > 0) {
@@ -20,6 +19,7 @@ if ($query && mysqli_num_rows($query) > 0) {
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="css/testregistration.css">
     <style>
     input[type=submit] {
   width: 10%;
