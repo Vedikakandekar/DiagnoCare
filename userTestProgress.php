@@ -123,11 +123,12 @@ if (isset($_GET['logout'])) {
         $con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
 
         $userid = $_SESSION['user_id'];
-        $result=mysqli_query($con,"select * from path_appointments where user_id='$userid' and test_progress!='Report is Ready' OR test_progress IS NULL "); //added when error occured
+        $result=mysqli_query($con,"select * from path_appointments where user_id='$userid' and( test_progress!='Report is Ready' OR test_progress IS NULL )"); //added when error occured
 
 
 
         ?>
+
         <tr>
 
             <table border="1">
@@ -150,7 +151,13 @@ if (isset($_GET['logout'])) {
 
                     <td>
 
-                        <?php echo $row["test_progress"];?>
+                        <?php if ($row["test_progress"]==null) {
+                        echo "N/A";
+                    }else
+                        {
+                             echo $row["test_progress"];
+                        }
+                        ?>
                     </td>
 
 

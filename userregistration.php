@@ -1,7 +1,7 @@
 <html>
     <head>
    <center>
-       <div class="pathlogin"><p>User Login</p></div>
+       <div class="pathlogin"><p>User Registration</p></div>
            </center>
   
     <link rel="stylesheet" href="css/userregistration.css">
