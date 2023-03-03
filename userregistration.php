@@ -19,12 +19,12 @@ if(isset($_POST['submit']))
 $firstname=$_POST['firstname'];
 $middlename=$_POST['middlename'];
 $lastname=$_POST['lastname'];
-$gender=$_POST['gender'];
+$addr=$_POST['addr'];
 $phno=$_POST['phno'];
 $emailid=$_POST['emailid'];
     $password=$_POST['password'];
     
-    $insert = mysqli_query($con," INSERT INTO user_login( firstname,middlename,lastname,gender,emailid,password,phno) VALUES ( '$firstname','$middlename','$lastname','$gender','$emailid','$password','$phno')");
+    $insert = mysqli_query($con," INSERT INTO user_login( firstname,middlename,lastname,emailid,password,phno,addr) VALUES ( '$firstname','$middlename','$lastname','$emailid','$password','$phno','$addr')");
 
     if(!$insert)
     {
@@ -40,13 +40,13 @@ mysqli_close($con); // Close connection
 ?>
         <form method="POST">
             <div class="textfield">
-                <p><input type="text" name="patho_name" placeholder="Enter First Name" required></p>
-                <p><input type="text" name="patho_name" placeholder="Enter Middle Name" required></p>
-                <p><input type="text" name="patho_name" placeholder="Enter Last Name" required></p>
-                <p><input type="email" name="patho_emailid" placeholder="Enter Email " pattern="^[a-z0-9](\.?[a-z0-9]){2,}@g(oogle)?mail\.com$" title="Please enter valid email" required></p>
-                <p><input type="password" name="patho_password" placeholder="Enter Passworrd"></p>
-                <p><input type="text" name="patho_phno" placeholder="Phone Number" pattern="^[789]\d{9}$" title="Please enter valid Number" required></p>
-                <p><input type="text" name="patho_addr" placeholder="Enter Address" ></p>
+                <p><input type="text" name="firstname" placeholder="Enter First Name" required></p>
+                <p><input type="text" name="middlename" placeholder="Enter Middle Name" required></p>
+                <p><input type="text" name="lastname" placeholder="Enter Last Name" required></p>
+                <p><input type="email" name="emailid" placeholder="Enter Email " pattern="^[a-z0-9](\.?[a-z0-9]){2,}@g(oogle)?mail\.com$" title="Please enter valid email" required></p>
+                <p><input type="password" name="password" placeholder="Enter Passworrd"></p>
+                <p><input type="text" name="phno" placeholder="Phone Number" pattern="^[789]\d{9}$" title="Please enter valid Number" required></p>
+                <p><input type="text" name="addr" placeholder="Enter Address" ></p>
                 <input type="submit" name="submit" value="Add User">
                 <button onclick="document.location='mainlogin.html'" class="button">Back</button>
             </div>

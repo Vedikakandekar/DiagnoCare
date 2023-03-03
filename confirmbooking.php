@@ -38,6 +38,13 @@ if (isset($_GET['available_tests']) && isset($_GET['appointment_date']) && isset
         $test_cost = $row['test_cost'];
     }
 
+    $mysqli = new mysqli();
+    $mysqli->connect(localhost, root, "", 'odlms');
+    $sql = "select * from pathalogy_login where patho_name='$pathname'";
+    $path_id = $mysqli->query("select patho_id from pathalogy_login where patho_name='$pathname'")->fetch_object()->patho_id;
+
+
+echo $path_id;
     // $test_id = $test_id_result->fetch_assoc()['test_id'];
     // $test_cost=$test_id_result->fetch_assoc()['test_cost'];
 
@@ -46,7 +53,7 @@ if (isset($_GET['available_tests']) && isset($_GET['appointment_date']) && isset
     $getContent = mysqli_fetch_assoc($getContent);
 
 
-    $path_id = $_SESSION["pathid"];
+
     $path_name = $_SESSION["pathname"];
     $fisrtname = $getContent["firstname"];
     $lastname = $getContent["lastname"];
@@ -58,7 +65,7 @@ if (isset($_GET['available_tests']) && isset($_GET['appointment_date']) && isset
 // echo $path_id,$path_name,$fisrtname,$lastname,$user_id;
 
 // mysqli_query($con, "INSERT INTO user_appointment (test_id, date,time,patho_id,patho_name,user_id,firstname,lastname, emailid) VALUES ('$test_id', '$appointment_date ','$appt:00', ,'$path_id','$path_name','$user_id','$fisrtname','$lastname','$emailid')");
-    $sql = "INSERT INTO user_appointment (test_id,test_name,test_cost, date,time,patho_id,patho_name,user_id,firstname,lastname, emailid) VALUES ('$test_id','$available_tests','$test_cost', '$appointment_date ','$appt:00',$path_id,'$path_name',$user_id,'$fisrtname','$lastname','$emailid','$addr','paid')";
+    $sql = "INSERT INTO user_appointment (test_id,test_name,test_cost, date,time,patho_id,patho_name,user_id,firstname,lastname, emailid,address,payment_status) VALUES ('$test_id','$available_tests','$test_cost', '$appointment_date ','$appt:00',$path_id ,'$path_name',$user_id ,'$fisrtname','$lastname','$emailid','$addr','paid')";
 // if($sql==TRUE){
 //   $con->query($sql);
 // }
@@ -255,6 +262,8 @@ if ($result->num_rows > 0) {
 }
 $con->close();
 ?>
+
+
 <h1>Appointment Details</h1>
 <table>
     <tr>

@@ -166,9 +166,9 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($conn, $query);
 
     if($result){
-        echo "File uploaded successfully.";
+        echo "<script type='text/javascript'>alert('Report Uploaded Successfully');location='statusUpdation.php';</script>";
     } else{
-        echo "File upload failed.";
+        echo "<script type='text/javascript'>alert('Something Went Wrong');location='pathalogylogin.html';</script>";
     }
 
     mysqli_close($conn);

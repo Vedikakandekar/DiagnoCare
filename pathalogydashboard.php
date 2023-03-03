@@ -18,9 +18,13 @@ if (isset($_GET['logout'])) {
 <body>
 
 <?php
-echo $_SESSION['patho_emailid'];
-?>
+$con = mysqli_connect("localhost:3306","root","","odlms")or die("Connection lost");
 
+$patho_id=$_SESSION['patho_id'];
+$res = mysqli_query($con,"select * from pathalogy_login where patho_id = $patho_id ");
+foreach($res as $row){
+
+?>
 
 <div class="dashboard"><ul>
     
@@ -35,14 +39,19 @@ echo $_SESSION['patho_emailid'];
 </div>
 <div class="main">
    <center style="margin-left: 25%">
-    <p style="font-size: 40px; margin: 0;">Pathalogy Name</p>
-    <p style="font-size: 25px">Address- Deeskbsnbgksbkgbsk</p>
-    <p style="font-size: 25px">Email ID- Ved@kandu.com</p>
-    <pre style="font-size: 25px">phone No- 3985499122969</pre>
-    <p style="font-size: 25px">Provided Test-</p>
-    <p style="font-size: 25px">Test 1</p>
-    <p style="font-size: 25px">Test 2</p>
+    <p style="font-size: 50px; margin: 0;"><?php echo $row['patho_name'];?></p>
+
    </center>
+    <pre style="font-size: 30px ; margin-left: 40%">Address - <?php echo $row['patho_addr'];?></pre>
+    <pre style="font-size: 30px;margin-left: 40%">Email ID- <?php echo $row['patho_emailid'];?></pre>
+    <pre style="font-size: 30px;margin-left: 40%">phone No- <?php echo $row['patho_phno'];?></pre>
+
+
+
+    <?php
+
+    }
+    ?>
 </div>
 
 </body>

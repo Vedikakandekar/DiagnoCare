@@ -108,7 +108,7 @@ if (isset($_GET['logout'])) {
     }
 
     $_SESSION['patho_id']=$patho_id;
-    $res = mysqli_query($con,"select * from path_appointments where patho_id = $patho_id and test_progress!='Report is Ready'");
+    $res = mysqli_query($con,"select * from path_appointments where patho_id = $patho_id and test_progress!='Report is Ready' OR test_progress IS NULL");
     foreach($res as $row){
         ?>
 
